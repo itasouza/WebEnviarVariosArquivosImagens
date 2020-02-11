@@ -1,0 +1,27 @@
+﻿@model WebEnviarVariosArquivosImagens.Models.RemessaImagens
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Upload de Arquivos</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="well">
+        <table class="table table-striped">
+            <tr>
+                <td>Arquivo : </td>
+                <td><input type="file" id="Arquivos" name="Arquivos" multiple /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" name="submit" value="Enviar Arquivo" /></td>
+            </tr>
+            <tr>
+                <td>@ViewBag.Mensagem</td>
+            </tr>
+        </table>
+    </div>
+}
+
